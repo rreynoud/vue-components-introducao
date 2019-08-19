@@ -1,28 +1,11 @@
 import Vue from 'vue'
-import { constants } from 'zlib';
+import App from './App.vue'
+import AppContador from './AppContador.vue'
 
-
-
-Vue.component('rre-component', {
-  data() {
-    return {
-      titulo: 'Curso de vueJs',
-      contador: 0
-    }
-  },
-  methods: {
-    incrementar : function(){
-      this.contador++
-    }
-  }, 
-  template: `
-    <div>
-    <h1>{{titulo}}</h1>
-    <button @click="incrementar" >Clicado {{contador}} vezes </button> 
-    </div>
-    `
-})
+Vue.component('app-contador', AppContador)
 
 new Vue({
-  el:'#app'
+  el:'#app',
+  render: h => h(App)
 })
+
